@@ -15,6 +15,6 @@ var serverURL='https://api.funtranslations.com/translate/minion.json'
             console.log(res.contents.translated)
             var converted=res.contents.translated
             output.innerText=converted
-        }).catch(errHandler())
+        })
     })
 
