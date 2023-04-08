@@ -5,6 +5,9 @@ var serverURL='https://api.funtranslations.com/translate/minion.json'
     function getTransectionalURL(text){
         return serverURL +"?"+"text="+text
     }
+    function errHandler(){
+        alert("someThing went Wrong")
+    }
     btntranslate.addEventListener("click",function clickEventHandler(){
            fetch(getTransectionalURL(input.value))
            .then(res=>res.json())
@@ -12,6 +15,6 @@ var serverURL='https://api.funtranslations.com/translate/minion.json'
             console.log(res.contents.translated)
             var converted=res.contents.translated
             output.innerText=converted
-        })
+        }).catch(errHandler())
     })
 
